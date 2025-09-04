@@ -4,7 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="CV cá nhân - Giới thiệu, kỹ năng, kinh nghiệm, dự án và liên hệ" />
-  <title>CV | Tên Của Bạn</title>
+  <meta name="theme-color" content="#3b82f6" />
+  <meta property="og:title" content="CV | Mai Tiến Đức" />
+  <meta property="og:description" content="Kỹ sư phần mềm – Java/Kotlin, React Native, Docker, PostgreSQL" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dragonkingl6.github.io/cv" />
+  <title>CV | Mai Tiến Đức</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -14,9 +19,9 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#">
-        <span class="brand-avatar" aria-hidden="true">👋</span>
+        <img class="brand-avatar" src="124181138.jpeg" alt="Ảnh đại diện Mai Tiến Đức" />
         <span class="brand-text">
-          <strong>Tên Của Bạn</strong>
+          <strong>Mai Tiến Đức</strong>
           <small>Vị trí/Chức danh</small>
         </span>
       </a>
@@ -37,61 +42,106 @@
 
   <main>
     <section id="hero" class="hero">
+      <div class="hero-visuals" aria-hidden="true">
+        <span class="blob b1"></span>
+        <span class="blob b2"></span>
+        <span class="blob b3"></span>
+      </div>
       <div class="container hero-inner">
-        <div class="hero-text">
-          <h1>Xin chào, tôi là <span class="accent">Tên Của Bạn</span></h1>
+        <div class="hero-text reveal">
+          <h1>Xin chào, tôi là <span class="accent gradient-text">Mai Tiến Đức</span></h1>
           <p>Tôi là <strong>Vị trí/Chức danh</strong> với niềm đam mê tạo ra sản phẩm số chất lượng, dễ sử dụng và hiệu quả.</p>
           <div class="hero-actions">
             <a class="btn primary" href="#projects">Xem dự án</a>
             <a class="btn" href="#contact">Liên hệ</a>
+            <a class="btn ghost" href="#" download>⬇️ Tải CV (PDF)</a>
+            <button class="btn" id="printBtn" type="button">🖨️ In CV</button>
           </div>
         </div>
-        <div class="hero-card">
+        <div class="hero-card reveal">
           <div class="card">
             <h3>Thông tin nhanh</h3>
             <ul class="meta">
-              <li>Địa điểm: TP. HCM</li>
+              <li>Địa điểm: Hà Nội</li>
               <li>Kinh nghiệm: 3+ năm</li>
-              <li>Trạng thái: Sẵn sàng cơ hội mới</li>
+              <li>Trạng thái: Đang tìm kiếm cơ hội</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
+    <section id="achievements" class="section alt">
+      <div class="container">
+        <h2>Thành tựu</h2>
+        <div class="counters">
+          <div class="counter-item reveal"><span class="counter" data-count="20">0</span><small>Dự án</small></div>
+          <div class="counter-item reveal"><span class="counter" data-count="3">0</span><small>Năm kinh nghiệm</small></div>
+          <div class="counter-item reveal"><span class="counter" data-count="15">0</span><small>Khách hàng hài lòng</small></div>
+          <div class="counter-item reveal"><span class="counter" id="techCount" data-count="8">0</span><small>Công nghệ thành thạo</small></div>
+        </div>
+      </div>
+    </section>
+
     <section id="about" class="section">
       <div class="container">
-        <h2>Giới thiệu</h2>
-        <p>Đoạn giới thiệu ngắn về bản thân, thế mạnh, mục tiêu nghề nghiệp và giá trị bạn mang lại cho đội ngũ/sản phẩm.</p>
+        <h2 class="reveal">Giới thiệu</h2>
+        <div class="stagger">
+          <p class="reveal slide-left">Đoạn giới thiệu ngắn về bản thân, thế mạnh, mục tiêu nghề nghiệp và giá trị bạn mang lại cho đội ngũ/sản phẩm.</p>
+          <p class="reveal slide-right">Tôi là người luôn chủ động học hỏi và cải tiến mỗi ngày. Yêu thích giải quyết vấn đề thực tế bằng công nghệ, tôi không ngại khó – ngại khổ, sẵn sàng dấn thân để hiểu vấn đề đến gốc rễ và hoàn thành mục tiêu đúng hạn, chất lượng. Tôi coi phản hồi là cơ hội để trưởng thành và luôn giữ tinh thần trách nhiệm cao khi làm việc nhóm cũng như tự thân.</p>
+        </div>
       </div>
     </section>
 
     <section id="skills" class="section alt">
       <div class="container">
-        <h2>Kỹ năng</h2>
-        <ul class="chips">
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>Git/GitHub</li>
-          <li>REST API</li>
+        <h2 class="reveal">Kỹ năng</h2>
+        <ul class="chips stagger">
+          <li class="reveal">Java</li>
+          <li class="reveal">Kotlin</li>
+          <li class="reveal">React Native</li>
+          <li class="reveal">JavaScript</li>
+          <li class="reveal">TypeScript</li>
+          <li class="reveal">Docker</li>
+          <li class="reveal">PostgreSQL</li>
+          <li class="reveal">MySQL</li>
+          <li class="reveal">HTML</li>
+          <li class="reveal">CSS</li>
+          <li class="reveal">Git/GitHub</li>
+          <li class="reveal">REST API</li>
         </ul>
       </div>
     </section>
 
     <section id="experience" class="section">
       <div class="container">
-        <h2>Kinh nghiệm</h2>
-        <div class="timeline">
-          <article class="item">
-            <h3>Công ty A — Vị trí</h3>
-            <small>01/2022 – Hiện tại</small>
-            <p>Mô tả ngắn trách nhiệm chính, thành tựu định lượng (ví dụ: tăng 20% tốc độ trang...).</p>
+        <h2 class="reveal">Kinh nghiệm</h2>
+        <div class="timeline stagger">
+          <article class="item reveal slide-left">
+            <h3>Dự án nhóm 1 — Ứng dụng React Native</h3>
+            <small>Vai trò: Mobile Developer • Team 4 người</small>
+            <ul class="list">
+              <li>Thiết kế cấu trúc dự án RN + TypeScript, chuẩn hóa lint/format.</li>
+              <li>Xây dựng các màn hình chính, navigation, state management cơ bản.</li>
+              <li>Tối ưu hiệu năng render, lazy-load, giảm thời gian khởi động ~25%.</li>
+              <li>Tích hợp REST API, xử lý auth, error boundary và retry logic.</li>
+            </ul>
+            <div class="card-actions" style="margin-top:8px">
+              <a class="btn small ghost" href="https://github.com/dragonkingl6/DuckBook.git" target="_blank" rel="noopener">Mã nguồn (GitHub)</a>
+            </div>
           </article>
-          <article class="item">
-            <h3>Công ty B — Vị trí</h3>
-            <small>01/2020 – 12/2021</small>
-            <p>Mô tả ngắn công việc, công nghệ sử dụng, kết quả nổi bật.</p>
+          <article class="item reveal slide-right">
+            <h3>Dự án nhóm 2 — Backend Java/Kotlin</h3>
+            <small>Vai trò: Backend Developer • Team 3 người</small>
+            <ul class="list">
+              <li>Thiết kế và phát triển REST API (auth, CRUD, pagination, caching).</li>
+              <li>Mô hình hóa CSDL PostgreSQL/MySQL, viết migration và chỉ mục tối ưu.</li>
+              <li>Đóng gói dịch vụ bằng Docker Compose, tạo profile dev/prod.</li>
+              <li>Giảm P95 response time ~30% bằng tối ưu truy vấn và connection pool.</li>
+            </ul>
+            <div class="card-actions" style="margin-top:8px">
+              <a class="btn small ghost" href="https://github.com/dragonkingl6/backend-project" target="_blank" rel="noopener">Mã nguồn (GitHub)</a>
+            </div>
           </article>
         </div>
       </div>
@@ -99,51 +149,57 @@
 
     <section id="projects" class="section alt">
       <div class="container">
-        <h2>Dự án</h2>
-        <div class="grid">
-          <article class="card">
+        <h2 class="reveal">Dự án</h2>
+        <div class="grid stagger">
+          <article class="card reveal">
             <h3>Tên dự án 1</h3>
             <p>Mô tả ngắn: mục tiêu, vai trò, kết quả.</p>
+            <ul class="tags"><li>React Native</li><li>TypeScript</li></ul>
             <div class="card-actions">
               <a class="btn small" href="#" target="_blank" rel="noopener">Xem demo</a>
               <a class="btn small ghost" href="https://github.com/dragonkingl6/DuckBook.git" target="_blank" rel="noopener">Mã nguồn</a>
             </div>
           </article>
-          <article class="card">
+          <article class="card reveal">
             <h3>Tên dự án 2</h3>
             <p>Mô tả ngắn: công nghệ chính, đóng góp cá nhân.</p>
+            <ul class="tags"><li>Java</li><li>Docker</li><li>PostgreSQL</li></ul>
             <div class="card-actions">
               <a class="btn small" href="#" target="_blank" rel="noopener">Xem demo</a>
               <a class="btn small ghost" href="#" target="_blank" rel="noopener">Mã nguồn</a>
             </div>
           </article>
-          <article class="card">
+          <article class="card reveal">
             <h3>Tên dự án 3</h3>
             <p>Mô tả ngắn: phạm vi, kết quả định lượng.</p>
+            <ul class="tags"><li>Kotlin</li><li>REST API</li></ul>
             <div class="card-actions">
               <a class="btn small" href="#" target="_blank" rel="noopener">Xem demo</a>
               <a class="btn small ghost" href="#" target="_blank" rel="noopener">Mã nguồn</a>
             </div>
           </article>
-          <article class="card">
+          <article class="card reveal">
             <h3>Tên dự án 4</h3>
             <p>Mô tả ngắn: bài toán, giải pháp, công nghệ chính.</p>
+            <ul class="tags"><li>JavaScript</li><li>HTML</li><li>CSS</li></ul>
             <div class="card-actions">
               <a class="btn small" href="#" target="_blank" rel="noopener">Xem demo</a>
               <a class="btn small ghost" href="#" target="_blank" rel="noopener">Mã nguồn</a>
             </div>
           </article>
-          <article class="card">
+          <article class="card reveal">
             <h3>Tên dự án 5</h3>
             <p>Mô tả ngắn: vai trò, trách nhiệm chính.</p>
+            <ul class="tags"><li>TypeScript</li><li>Node.js</li></ul>
             <div class="card-actions">
               <a class="btn small" href="#" target="_blank" rel="noopener">Xem demo</a>
               <a class="btn small ghost" href="#" target="_blank" rel="noopener">Mã nguồn</a>
             </div>
           </article>
-          <article class="card">
+          <article class="card reveal">
             <h3>Tên dự án 6</h3>
             <p>Mô tả ngắn: kết quả đạt được, tác động.</p>
+            <ul class="tags"><li>MySQL</li><li>Docker</li></ul>
             <div class="card-actions">
               <a class="btn small" href="#" target="_blank" rel="noopener">Xem demo</a>
               <a class="btn small ghost" href="#" target="_blank" rel="noopener">Mã nguồn</a>
@@ -155,8 +211,8 @@
 
     <section id="education" class="section">
       <div class="container">
-        <h2>Học vấn</h2>
-        <ul class="list">
+        <h2 class="reveal">Học vấn</h2>
+        <ul class="list stagger">
           <li><strong>Trường Đại học XYZ</strong> — Chuyên ngành, 2016–2020</li>
         </ul>
       </div>
@@ -164,11 +220,10 @@
 
     <section id="contact" class="section alt">
       <div class="container">
-        <h2>Liên hệ</h2>
-        <ul class="contacts">
+        <h2 class="reveal">Liên hệ</h2>
+        <ul class="contacts stagger">
           <li>Email: <a href="mailto:you@example.com">you@example.com</a></li>
-          <li>GitHub: <a href="https://github.com/yourname" target="_blank" rel="noopener">@yourname</a></li>
-          <li>LinkedIn: <a href="https://linkedin.com/in/yourname" target="_blank" rel="noopener">/in/yourname</a></li>
+          <li>GitHub: <a href="https://github.com/dragonkingl6" target="_blank" rel="noopener">Dragonkingl6</a></li>
         </ul>
       </div>
     </section>
@@ -176,7 +231,7 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© <span id="year"></span> Tên Của Bạn. Tất cả các quyền được bảo lưu.</p>
+      <p>© <span id="year"></span> Mai Tiến Đức.</p>
     </div>
   </footer>
 
