@@ -19,7 +19,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="#">
-        <img class="brand-avatar" src="124181138.jpeg" alt="Ảnh đại diện Mai Tiến Đức" />
+        <img class="brand-avatar" src="idle_fixed.gif" alt="Ảnh đại diện Mai Tiến Đức" />
         <span class="brand-text">
           <strong>Mai Tiến Đức</strong>
           <small>Vị trí/Chức danh</small>
@@ -28,12 +28,12 @@
       <nav class="site-nav" aria-label="Primary">
         <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">☰</button>
         <ul id="navMenu">
-          <li><a href="#about">Giới thiệu</a></li>
-          <li><a href="#skills">Kỹ năng</a></li>
-          <li><a href="#experience">Kinh nghiệm</a></li>
-          <li><a href="#projects">Dự án</a></li>
-          <li><a href="#education">Học vấn</a></li>
-          <li><a href="#contact">Liên hệ</a></li>
+          <li><a href="#about" data-first-word="Giới" data-second-word="thiệu">Giới thiệu</a></li>
+          <li><a href="#skills" data-first-word="Kỹ" data-second-word="năng">Kỹ năng</a></li>
+          <li><a href="#experience" data-first-word="Kinh" data-second-word="nghiệm">Kinh nghiệm</a></li>
+          <li><a href="#projects" data-first-word="Dự" data-second-word="án">Dự án</a></li>
+          <li><a href="#education" data-first-word="Học" data-second-word="vấn">Học vấn</a></li>
+          <li><a href="#contact" data-first-word="Liên" data-second-word="hệ">Liên hệ</a></li>
         </ul>
       </nav>
       <button id="themeToggle" class="btn ghost" aria-label="Chuyển chủ đề">🌙</button>
@@ -411,6 +411,71 @@
 (function () {
   const btn = document.getElementById('printBtn');
   if (btn) btn.addEventListener('click', () => window.print());
+})();
+
+
+// Menu animation with gif
+(function () {
+  const menuLinks = document.querySelectorAll('.site-nav a');
+  let currentGif = null;
+  let currentTimeout = null;
+  let currentBreakTimeout = null;
+  
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      // Dừng gif hiện tại nếu có
+      if (currentGif && currentGif.parentNode) {
+        currentGif.parentNode.removeChild(currentGif);
+      }
+      
+      // Hủy timeout hiện tại nếu có
+      if (currentTimeout) {
+        clearTimeout(currentTimeout);
+      }
+      
+      // Hủy break timeout hiện tại nếu có
+      if (currentBreakTimeout) {
+        clearTimeout(currentBreakTimeout);
+      }
+      
+      // Xóa class breaking từ tất cả menu links
+      menuLinks.forEach(l => l.classList.remove('breaking'));
+      
+      // Tạo element gif mới
+      const gif = document.createElement('img');
+      gif.src = 'attack_fixed.gif?' + Date.now(); // Force reload gif từ đầu
+      gif.className = 'menu-gif';
+      gif.alt = 'Attack animation';
+      
+      // Bảo vệ gif khỏi chuột phải và drag
+      gif.addEventListener('contextmenu', (e) => e.preventDefault());
+      gif.addEventListener('dragstart', (e) => e.preventDefault());
+      gif.addEventListener('selectstart', (e) => e.preventDefault());
+      gif.style.pointerEvents = 'none';
+      
+      // Thêm gif vào link hiện tại
+      this.appendChild(gif);
+      
+      // Thêm hiệu ứng vỡ nút sau 1.7 giây
+      currentBreakTimeout = setTimeout(() => {
+        this.classList.add('breaking');
+        // Xóa class breaking sau khi animation hoàn thành
+        setTimeout(() => {
+          this.classList.remove('breaking');
+        }, 500);
+      }, 1700);
+      
+      // Lưu reference cho gif và timeout hiện tại
+      currentGif = gif;
+      currentTimeout = setTimeout(() => {
+        if (gif.parentNode) {
+          gif.parentNode.removeChild(gif);
+        }
+        currentGif = null;
+        currentTimeout = null;
+      }, 2000);
+    });
+  });
 })();
   </script>
 </body>
